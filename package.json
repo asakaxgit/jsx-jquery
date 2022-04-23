@@ -1,0 +1,45 @@
+{
+  "name": "jsx-jquery",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npm run server:dev",
+    "server": "npm run server:dev",
+    "server:dev": "webpack-dev-server --mode development --config ./webpack.config.js --hot --inline --progress --watch --open",
+    "server:prod": "cross-env NODE_ENV=production webpack-dev-server  --mode production --config ./webpack.config.js --port 3000 --host 0.0.0.0 --hot --inline --progress  --watch --open --content-base dist/",
+    "build": "npm run build:prod",
+    "build:dev": "webpack --mode development --config ./webpack.config.js --progress --color --display-error-details",
+    "build:prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.config.js  --progress  --color --display-error-details --bail",
+    "clean": "npm cache clear && rimraf -- dist",
+    "test": "karma start"
+  },
+  "dependencies": {
+    "jquery": "^3.5.14"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.14",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.29.4",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "rimraf": "^3.0.2",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "author": "",
+  "description": ""
+}
